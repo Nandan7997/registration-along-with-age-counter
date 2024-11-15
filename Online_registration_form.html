@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMnIxHfO5xv65iJ6hFV3Tk+jP8vDABtqGsJfOGJ" crossorigin="anonymous">
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #83a4d4, #b6fbff);
+            padding: 0 10px;
+            flex-direction: column;
+            position: relative;
+        }
+
+        /* Marquee styling */
+        .marquee {
+            background-color: #ffeb3b;
+            color: #333;
+            padding: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* Header image */
+        .header-img {
+            width: 100px;
+            height: auto;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 380px;
+            width: 100%;
+            margin: 0;
+            border: 1px solid #ddd;
+        }
+
+        form h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .input-group i {
+            color: #999;
+            margin-right: 10px;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            border: none;
+            outline: none;
+            padding: 8px;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Table styling */
+        .output-table {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 380px;
+            border-collapse: collapse;
+            background: #f1f1f1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .output-table th, .output-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .output-table th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Right-side decorative image */
+        .side-img {
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Marquee Section -->
+    <div class="marquee">
+        <marquee>Welcome to the Registration Form! Please fill out all fields to complete your registration.</marquee>
+    </div>
+
+    <!-- Header Image -->
+    <!--img src="https://via.placeholder.com/100" alt="Logo" class="header-img"-->
+
+    <form id="myForm">
+        <h2>Registration Form</h2>
+        
+        <!-- Name -->
+        <label for="name">Name:</label>
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- Phone Number -->
+        <label for="phone">Phone Number:</label>
+        <div class="input-group">
+            <i class="fas fa-phone"></i>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+
+        <!-- Birthdate -->
+        <label for="birthdate">Birthdate:</label>
+        <div class="input-group">
+            <i class="fas fa-calendar-alt"></i>
+            <input type="date" id="birthdate" name="birthdate" required>
+        </div>
+
+        <!-- Address -->
+        <label for="address">Address:</label>
+        <div class="input-group">
+            <i class="fas fa-address-card"></i>
+            <input type="text" id="address" name="address" required>
+        </div>
+
+        <!-- Country -->
+        <label for="country">Country:</label>
+        <div class="input-group">
+            <i class="fas fa-flag"></i>
+            <select id="country" name="country" required>
+                <option value="">Select your country</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="UK">UK</option>
+                <option value="Australia">Australia</option>
+            </select>
+        </div>
+
+        <!-- Gender -->
+        <label for="gender">Gender:</label>
+        <div class="input-group">
+            <i class="fas fa-venus-mars"></i>
+            <select id="gender" name="gender" required>
+                <option value="">Select your gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <!-- Confirm Password -->
+        <label for="confirmPassword">Confirm Password:</label>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+        </div>
+
+        <!-- Terms and Conditions -->
+        <label for="terms">
+            <input type="checkbox" id="terms" name="terms" required> I accept the <a href="#">Terms and Conditions</a>
+        </label>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+
+        <!-- Output Table -->
+        <table class="output-table" id="outputTable" style="display: none;">
+            <tr><th>Field</th><th>Value</th></tr>
+        </table>
+    </form>
+
+    <!-- Decorative Image -->
+    <!--img src="https://via.placeholder.com/200" alt="Decoration" class="side-img"-->
+
+    <script>
+        // Email validation
+        function validateEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+
+        // Phone number validation (10-15 digits)
+        function validatePhone(phone) {
+            const phonePattern = /^\d{10,15}$/;
+            return phonePattern.test(phone);
+        }
+
+        // Password validation (at least 6 characters, at least one letter and one number)
+        function validatePassword(password) {
+            const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+            return passwordPattern.test(password);
+        }
+
+        // Calculate age from the birthdate
+        function calculateAge(birthdate) {
+            const birthDate = new Date(birthdate);
+            const currentDate = new Date();
+            let age = currentDate.getFullYear() - birthDate.getFullYear();
+            const m = currentDate.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && currentDate.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+        // Submit form and display output in a table format
+        function submitForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const birthdate = document.getElementById("birthdate").value;
+            const address = document.getElementById("address").value;
+            const country = document.getElementById("country").value;
+            const gender = document.getElementById("gender").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            const terms = document.getElementById("terms").checked;
+
+            // Validate form fields
+            if (!validateEmail(email)) { alert("Please enter a valid email address."); return; }
+            if (!validatePhone(phone)) { alert("Phone number must be between 10 and 15 digits."); return; }
+            if (!validatePassword(password)) { alert("Password must be at least 6 characters long, contain at least one letter and one number."); return; }
+            if (password !== confirmPassword) { alert("Passwords do not match."); return; }
+            if (!terms) { alert("You must accept the terms and conditions."); return; }
+
+            // Calculate age
+            const age = calculateAge(birthdate);
+
+            // Display output in table format
+            const outputTable = document.getElementById("outputTable");
+            outputTable.style.display = "table";
+            outputTable.innerHTML = `
+                <tr><th>Field</th><th>Value</th></tr>
+                <tr><td>Name</td><td>${name}</td></tr>
+                <tr><td>Email</td><td>${email}</td></tr>
+                <tr><td>Phone</td><td>${phone}</td></tr>
+                <tr><td>Birthdate</td><td>${new Date(birthdate).toLocaleDateString()} (Age: ${age})</td></tr>
+                <tr><td>Address</td><td>${address}</td></tr>
+                <tr><td>Country</td><td>${country}</td></tr>
+                <tr><td>Gender</td><td>${gender}</td></tr>
+            `;
+        }
+    </script>
+</body>
+</html>
